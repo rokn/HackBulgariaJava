@@ -27,7 +27,7 @@ public class Successor extends Natural {
     @Override
     public Natural add(Natural b) {
         Natural res = this;
-        Natural curr = this;
+        Natural curr = b;
 
         while(!curr.isZero()){
             res = new Successor(res);
@@ -44,10 +44,11 @@ public class Successor extends Natural {
     @Override
     public Natural subtract(Natural b) throws Exception {
         Natural res = this;
-        Natural curr = this;
+        Natural curr = b;
 
         while(!curr.isZero()){
-            res = new Successor(res.prev().prev());
+            res = res.prev();
+
             try {
                 curr = curr.prev();
             } catch (Exception e) {

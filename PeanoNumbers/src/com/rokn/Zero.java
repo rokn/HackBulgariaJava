@@ -29,11 +29,26 @@ public class Zero extends Natural{
 
     @Override
     public Natural add(Natural b) {
-        return null;
+        Natural res = this;
+        Natural curr = b;
+
+        while(!curr.isZero()){
+            res = new Successor(res);
+            try {
+                curr = curr.prev();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return res;
     }
 
     @Override
     public Natural subtract(Natural b) throws Exception {
+        if(b.isZero()){
+            return this;
+        }
         throw new Exception("There is no prev on zero");
     }
 

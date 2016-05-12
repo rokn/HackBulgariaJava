@@ -11,9 +11,9 @@ public abstract class Natural {
     public abstract boolean isZero();
     public abstract Natural next();
     public abstract Natural prev() throws Exception;
-    public abstract Natural add(Natural b);
+    public abstract Natural add(Natural b) throws Exception;
     public abstract Natural subtract(Natural b) throws Exception;
-    public abstract Integer toInt();
+    public abstract Integer toInt() throws Exception;
 
     @Override
     public boolean equals(Object o) {
